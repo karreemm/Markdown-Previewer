@@ -40,7 +40,18 @@ body {
   .btn:hover {
     background-color: #0056b3;
   }
-  
+
+  .for-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .for-center2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
   textarea {
     width: 100%;
     height: 200px;
@@ -50,16 +61,38 @@ body {
     margin-bottom: 20px;
     font-family: monospace;
   }
+  .Preview{
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-family: monospace;
+    overflow: hidden;
+  }
+  .Preview > * {
+    margin-top: 0; 
+  }
+
+  .docs-parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   
   .docs-container {
     margin-top: 20px;
     max-height: 400px;
     overflow-y: auto; 
+    width:90%;
+    background-color: blue;
   }
   
   .docs {
     display: flex;
     flex-direction: column;
+    padding: 1rem;
   }
   
   .doc-item {
@@ -92,5 +125,11 @@ body {
   
   h5 {
     margin: 10px 0 5px;
+  }
+
+  .docs-title{
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
   }
   
