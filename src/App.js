@@ -14,19 +14,17 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetch('/api/v1/basic-syntax.json')
+    fetch(process.env.PUBLIC_URL + '/basic-syntax.json')
       .then(response => {
         console.log('Response:', response);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        return response.text();
+        return response.json();
       })
       .then(data => {
-        console.log('Raw data:', data);
-        const jsonData = JSON.parse(data); 
-        console.log('Fetched data:', jsonData);
-        setDocs(jsonData.basic_syntax);
+        console.log('Fetched data:', data);
+        setDocs(data.basic_syntax);
       })
       .catch(error => console.error('Error fetching the docs:', error));
   }, []);
