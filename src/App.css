@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #1a659e;
+  background-color: #0C1844;
   color: #333;
   margin: 0;
   padding: 0;
@@ -14,10 +14,11 @@ h1 {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #004e89;
+  background-color: #17153B;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   height: 550px;
+  border: 3px solid #fff;
 }
 .for-height {
   height: 85vh;
@@ -41,7 +42,12 @@ h1 {
   background-color: #ebe2e2; 
 }
 .btn.active {
-  background-color: #ff6b35; 
+  background-color: #C80036; 
+  color: white;
+}
+
+.btn.active:hover {
+  background-color: #d60940; 
   color: white;
 }
 .for-center {
@@ -63,8 +69,8 @@ textarea {
   border-radius: 5px;
   margin-bottom: 20px;
   font-family: monospace;
-  background-color: #004e89;
-  color: #fff;
+  background-color: #FFF5E1;
+  color: #000;
 
 }
 textarea:focus {
@@ -79,8 +85,8 @@ textarea:focus {
   margin-bottom: 20px;
   font-family: monospace;
   overflow: hidden;
-  background-color: #004e89;
-  color: #fff;
+  background-color: #FFF5E1;
+  color: #000;
 }
 .Docs-container {
   width: 100%;
@@ -93,10 +99,11 @@ textarea:focus {
   overflow-x: hidden;
   display: flex;
   justify-content: center;
-  background-color: #004e89;
+  background-color: #FFF5E1;
 }
 .Preview > * {
   margin-top: 0; 
+  color:#000
 }
 .docs {
   display: flex;

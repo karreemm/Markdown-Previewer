@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react';
 import { marked } from 'marked';
 
 const App = () => {
-  const [code, setCode] = useState('## Hello');
-  const [compiled, setCompiled] = useState('<h2 id="hello">Hello</h2>');
+  const [code, setCode] = useState('## Try It Now!');
+  const [compiled, setCompiled] = useState('<h2 id="Try It Now!">Try It Now!</h2>');
   const [view, setView] = useState('markdown'); 
   const [docs, setDocs] = useState([]);
 
