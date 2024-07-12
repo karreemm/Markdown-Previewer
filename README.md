@@ -8,3 +8,5 @@ A markdown previewer that allows users to write and preview markdown text.
   - Run This Command "npm install"
   - Run This Command "npm start"
   - Try It Now!
+## Check Live Demo 
+  You can view the demo of the markdown previewer [here](https://karreemm.github.io/Markdown-Previewer).
