@@ -1,95 +1,91 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #1a659e;
   color: #333;
   margin: 0;
   padding: 0;
 }
-
 h1 {
   text-align: center;
   margin-top: 20px;
-  color: #444;
+  color: #fff;
 }
-
 .container {
   width: 80%;
   margin: 0 auto;
   padding: 20px;
-  background-color: #fff;
+  background-color: #004e89;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   height: 550px;
 }
-
 .for-height {
   height: 85vh;
 }
-
 .btns {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
-
 .btn {
   padding: 10px 20px;
   margin: 0 10px;
   border: none;
-  background-color: black; /* Default color */
-  color: white;
+  background-color: white;
+  color: black;
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .btn:hover {
-  background-color: #333; /* Darker shade for hover */
+  background-color: #ebe2e2; 
 }
-
 .btn.active {
-  background-color: #007BFF; /* Active color */
+  background-color: #ff6b35; 
   color: white;
 }
-
 .for-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .for-center2 {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0;
 }
-
 textarea {
   width: 100%;
   height: 460px;
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 2px solid #fff;
   border-radius: 5px;
   margin-bottom: 20px;
   font-family: monospace;
-}
+  background-color: #004e89;
+  color: #fff;
 
+}
+textarea:focus {
+  outline: none;
+}
 .Preview {
   width: 100%;
   height: 460px;
   padding: 10px;
-  border: 2px solid #000;
+  border: 2px solid #fff;
   border-radius: 5px;
   margin-bottom: 20px;
   font-family: monospace;
   overflow: hidden;
+  background-color: #004e89;
+  color: #fff;
 }
-
 .Docs-container {
   width: 100%;
   height: 480px;
-  border: 2px solid #000;
+  border: 2px solid #fff;
   border-radius: 5px;
   margin-bottom: 20px;
   font-family: monospace;
@@ -97,25 +93,17 @@ textarea {
   overflow-x: hidden;
   display: flex;
   justify-content: center;
+  background-color: #004e89;
 }
-
 .Preview > * {
   margin-top: 0; 
 }
-
-.docs-parent {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .docs {
   display: flex;
   flex-direction: column;
   padding: 1rem;
   width: 95%;
 }
-
 .doc-item {
   flex: 1 1 300px;
   margin: 10px;
@@ -124,38 +112,28 @@ textarea {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
-
 .doc-item h3 {
   margin-top: 0;
 }
-
 pre {
   background-color: #eee;
   padding: 10px;
   border-radius: 5px;
   overflow-x: auto;
 }
-
 pre code {
   font-family: monospace;
 }
-
 h4 {
   margin-bottom: 5px;
 }
-
 h5 {
   margin: 10px 0 5px;
 }
-
 .docs-title {
   width: 100%;
   text-align: center;
   margin-top: 2rem;
 }
 
-.Footer {
-  width: 100%;
-  text-align: center;
-  height: 4rem;
-}
+
