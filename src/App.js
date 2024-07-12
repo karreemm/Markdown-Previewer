@@ -5,16 +5,8 @@ import { marked } from 'marked';
 const App = () => {
   const [code, setCode] = useState('## Hello');
   const [compiled, setCompiled] = useState('<h2 id="hello">Hello</h2>');
-  const [hide, hidePreview] = useState(true);
+  const [view, setView] = useState('markdown'); 
   const [docs, setDocs] = useState([]);
-
-  const openMD = () => {
-    hidePreview(true);
-  };
-
-  const openPreview = () => {
-    hidePreview(false);
-  };
 
   const handleChange = (e) => {
     setCode(e.target.value);
@@ -42,52 +34,72 @@ const App = () => {
   return (
     <>
       <h1>Markdown Previewer</h1>
-      <div className="container">
-        <div className="btns">
-          <button onClick={openMD} className="btn">Markdown</button>
-          <button onClick={openPreview} className="btn">Preview</button>
-        </div>
-        {hide ? (
-          <div className='for-center'>
-            <textarea onChange={handleChange} value={code} />
+      <div className='for-height'>
+        <div className="container">
+          <div className="btns">
+            <button 
+              onClick={() => setView('markdown')} 
+              className={`btn ${view === 'markdown' ? 'active' : ''}`}
+            >
+              Markdown
+            </button>
+            <button 
+              onClick={() => setView('preview')} 
+              className={`btn ${view === 'preview' ? 'active' : ''}`}
+            >
+              Preview
+            </button>
+            <button 
+              onClick={() => setView('docs')} 
+              className={`btn ${view === 'docs' ? 'active' : ''}`}
+            >
+              Docs
+            </button> 
           </div>
-        ) : (
-          <div className='for-center2'>
-            <div className='Preview' dangerouslySetInnerHTML={{ __html: compiled }} />
-          </div>
-        )}
-      </div>
-      <h2 className='docs-title'>Markdown Documentation</h2>
-      <div className='docs-parent'>
-        <div className="docs-container">
-          <div className="docs">
-            {docs.map((doc, index) => (
-              <div key={index} className="doc-item">
-                <h3>{doc.name}</h3>
-                <p>{doc.description}</p>
-                <h4>Examples:</h4>
-                {doc.examples.map((example, i) => (
-                  <div key={i}>
-                    <pre>{example.markdown}</pre>
-                    <div dangerouslySetInnerHTML={{ __html: example.html }} />
-                  </div>
-                ))}
-                {doc.additional_examples.length > 0 && (
-                  <>
-                    <h4>Additional Examples:</h4>
-                    {doc.additional_examples.map((example, i) => (
-                      <div key={i}>
-                        <h5>{example.name}</h5>
-                        <p>{example.description}</p>
-                        <pre>{example.markdown}</pre>
-                        <div dangerouslySetInnerHTML={{ __html: example.html }} />
-                      </div>
-                    ))}
-                  </>
-                )}
+          {view === 'markdown' && (
+            <div className='for-center'>
+              <textarea onChange={handleChange} value={code} />
+            </div>
+          )}
+          {view === 'preview' && (
+            <div className='for-center2'>
+              <div className='Preview' dangerouslySetInnerHTML={{ __html: compiled }} />
+            </div>
+          )}
+          {view === 'docs' && ( 
+            <div className='for-center2'>
+              <div className='Docs-container'> 
+                <div className="docs">
+                  {docs.map((doc, index) => (
+                    <div key={index} className="doc-item">
+                      <h3>{doc.name}</h3>
+                      <p>{doc.description}</p>
+                      <h4>Examples:</h4>
+                      {doc.examples.map((example, i) => (
+                        <div key={i}>
+                          <pre>{example.markdown}</pre>
+                          <div dangerouslySetInnerHTML={{ __html: example.html }} />
+                        </div>
+                      ))}
+                      {doc.additional_examples.length > 0 && (
+                        <>
+                          <h4>Additional Examples:</h4>
+                          {doc.additional_examples.map((example, i) => (
+                            <div key={i}>
+                              <h5>{example.name}</h5>
+                              <p>{example.description}</p>
+                              <pre>{example.markdown}</pre>
+                              <div dangerouslySetInnerHTML={{ __html: example.html }} />
+                            </div>
+                          ))}
+                        </>
+                      )}
+                    </div>
+                  ))}
+                </div>
               </div>
-            ))}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </>
